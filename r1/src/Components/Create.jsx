@@ -3,17 +3,17 @@ import { useState } from 'react';
 export default function Create({ setCreate }) {
 
     const [color, setColor] = useState('#ffffff');
-    const [size, setSize] = useState(20);
+    const [size, setSize] = useState(100);
 
     const add = _ => {
         setCreate(
             {
                 color,
-                size
+                size: parseInt(size)
             }
         );
         setColor('#ffffff');
-        setSize(20);
+        setSize(100);
     }
 
     return (
@@ -26,7 +26,7 @@ export default function Create({ setCreate }) {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Size <b>{size}</b></label>
-                    <input type="range" min={10} max={40} step={1} value={size} onChange={e => setSize(e.target.value)} className="form-range" />
+                    <input type="range" min={100} max={200} step={1} value={size} onChange={e => setSize(e.target.value)} className="form-range" />
                 </div>
                 <button type="button" onClick={add} className="btn btn-outline-primary">Add Color</button>
             </div>
