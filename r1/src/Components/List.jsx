@@ -1,4 +1,4 @@
-export default function List({ colors }) {
+export default function List({ colors, setRemove, setEdit }) {
     return (
         <div className="card mt-5">
             <div className="card-body">
@@ -22,7 +22,10 @@ export default function List({ colors }) {
                                         }
                                     }>
                                     </div>
-                                    <button className="btn btn-danger float-end">REMOVE</button>
+                                    <div className="buttons">
+                                    <button onClick={_ => setRemove(color)} className="btn btn-danger float-end m-1">REMOVE</button>
+                                    <button onClick={_ => setEdit(color)} className="btn btn-success float-end m-1">EDIT</button>
+                                    </div>
                                 </div>
                             </li>
                         ))
