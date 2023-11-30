@@ -34,7 +34,11 @@ export default function Create({ setCreate, addMessage }) {
     }
 
     useEffect(_ => {
-        errors.color && delete errors.color;
+        if (errors.color) {
+            const e = { ...errors };
+            delete e.color;
+            setErrors(e);
+        }
     }, [color]);
 
     return (
