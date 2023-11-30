@@ -30,8 +30,8 @@ export const read = (key, id = 0) => {
     return items;
 }
 
-export const update = (key, id, value) => {
-    const items = get(key).map(item => item.id === id ? {...value, id} : item);
+export const lsUpdate = (key, id, value) => {
+    const items = get(key).map(item => item.id === id ? {...item, ...value, id} : item);
     set(key, items);
 }
 

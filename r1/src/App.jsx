@@ -2,10 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Create from './Components/Create';
 import { useEffect, useState } from 'react';
-import { read, store, destroy, update } from './Functions/ls';
+import { read, store, destroy, lsUpdate } from './Functions/ls';
 import List from './Components/List';
 import Delete from './Components/Delete';
 import Edit from './Components/Edit';
+import axios from 'axios';
 
 const KEY = 'colors';
 
@@ -24,10 +25,7 @@ function App() {
     setTimeout(_ => {
       setColors(read(KEY));
     }, 100);
-
-    console.log(read(KEY));
   }, []);
-
 
   useEffect(_ => {
     if (null === create) {
@@ -35,7 +33,7 @@ function App() {
     }
     const id = store(KEY, create);
     setColors(c => [{...create, id }, ...c]);
-
+    getName(create.color, id);
   }, [create]);
 
   useEffect(_ => {
@@ -48,17 +46,28 @@ function App() {
     setRemove(null);
   }, [clear]);
 
-  // useEffect(_ => {
-  //   if (null === update) {
-  //     return;
-  //   }
-  //   update(KEY, update);
-  //   setColors(c => c.map(color => color.id === update.id ? update : color));
-  //   setUpdate(null);
-  //   setEdit(null);
-  // }
-  // , [update]);
+  useEffect(_ => {
+    if (null === update) {
+      return;
+    }
+    lsUpdate(KEY, update.id, update);
+    setColors(c => c.map(color => color.id === update.id ? update : color));
+    getName(update.color, update.id);
+    setUpdate(null);
+    setEdit(null);
+  }, [update]);
 
+  const getName = (hex, id) => {
+    hex = hex.replace('#', '');
+    const url = 'https://www.thecolorapi.com/id?hex=' + hex;
+    axios.get(url)
+      .then(res => {
+        const name = res.data.name.value;
+        lsUpdate(KEY, id, { name });
+        setColors(c => c.map(color => color.id === id ? { ...color, name } : color));
+      })
+      .catch(err => console.log(err));
+  }
 
 
   return (

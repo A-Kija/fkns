@@ -9,7 +9,8 @@ export default function Create({ setCreate }) {
         setCreate(
             {
                 color,
-                size: parseInt(size)
+                size: parseInt(size),
+                name: 'New Color'
             }
         );
         setColor('#ffffff');

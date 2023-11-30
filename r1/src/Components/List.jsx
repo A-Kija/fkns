@@ -21,7 +21,9 @@ export default function List({ colors, setRemove, setEdit }) {
                                             height: color.size + 'px'
                                         }
                                     }>
+                                        
                                     </div>
+                                    <p>{color.name}</p>
                                     <div className="buttons">
                                     <button onClick={_ => setRemove(color)} className="btn btn-danger float-end m-1">REMOVE</button>
                                     <button onClick={_ => setEdit(color)} className="btn btn-success float-end m-1">EDIT</button>
