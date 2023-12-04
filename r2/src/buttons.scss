@@ -1,0 +1,83 @@
+$yellow: #FBAF00;
+$pink: #FFA3AF;
+$blue: #007CBE;
+$green: #00AF54;
+
+
+button {
+    background: gray;
+    border: 1px solid gray;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin: 5px;
+
+    &:hover,
+    &:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: gray;
+    }
+    &:active {
+        opacity: .5;
+    }
+
+    &.yellow {
+        background-color: $yellow;
+        border-color: $yellow;
+    }
+    &.pink {
+        background-color: $pink;
+        border-color: $pink;
+    }
+    &.blue {
+        background-color: $blue;
+        border-color: $blue;
+    }   
+    &.green {
+        background-color: $green;
+        border-color: $green;
+    }
+    &.yellow:hover,
+    &.yellow:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: $yellow;
+    }
+    &.pink:hover,
+    &.pink:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: $pink;
+    }
+    &.blue:hover,
+    &.blue:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: $blue;
+    }
+    &.green:hover,
+    &.green:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: $green;
+    }
+    
+}
