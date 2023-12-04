@@ -1,48 +1,28 @@
 import { useState } from 'react';
 import './buttons.scss';
 import './App.scss';
-import Square from './Components/042/Square';
+import Gran from './Components/042/Gran';
+import { FamilyContext } from './Components/042/FamilyContext';
+
 
 function App() {
 
-  const [plusCounter, setPlusCounter] = useState(0);
+    const [counter1, setCounter1] = useState(0);
 
-  const plus = _ => {
-    setPlusCounter(c => c + 1); // edit
-    setPlusCounter(c => c + 1);
-    setPlusCounter(c => c + 1);
-    setPlusCounter(c => c + 1);
-  }
-
-  const reset = _ => {
-    setPlusCounter(0); // create
-  }
-
-  const [squares, setSquares] = useState([]);
-
-  const add = _ => {
-    setSquares(s => [{ count: 0 }, ...s]);
-  }
+  
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Counter: {plusCounter}</h1>
         <p>
-          This is a REACT STATE #2-2
+          This is CONTEXT
         </p>
-        <div className="sq-bin">
-          {
-            squares.map((s, i) => <Square key={i} square={s} />)
-          }
-        </div>
-        <div className="sq-bin">
-        <button className="pink" onClick={add}>Add One Square</button>
-        <button className="blue" onClick={plus}>+1</button>
-        <button className="yellow" onClick={reset}>reset</button>
-        </div>
-      
-      </header>
+        <button className="pink" onClick={_ => setCounter1(c => c + 1)}>Counter1: {counter1}</button>
+        <FamilyContext.Provider>
+            <Gran counter1={counter1} />
+        </FamilyContext.Provider>
+
+        </header>
     </div>
   );
 }

@@ -27,10 +27,19 @@
     height: 150px;
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 30px;
   }
 }
 
-
+.context-container{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid skyblue;
+  flex-direction: column;
+}

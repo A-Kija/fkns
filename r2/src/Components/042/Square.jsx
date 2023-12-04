@@ -1,8 +1,9 @@
-export default function Square({ square }) {
+export default function Square({ square, plusOne }) {
 
     return (
         <div className="sq">
-            <h2>{square.count}</h2>
+            <b>{square.count}</b>
+            <button className="blue" onClick={_ => plusOne(square)}>+1</button>
         </div>
     );   
 }
