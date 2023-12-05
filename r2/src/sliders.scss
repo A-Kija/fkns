@@ -1,0 +1,76 @@
+$yellow: #FBAF00;
+$pink: #FFA3AF;
+$blue: #007CBE;
+$green: #00AF54;
+
+$width: 300px;
+$minus10: $width - 10px;
+
+input[type="range"].yellow {
+    -webkit-appearance: none;
+    width: $width;
+    height: 20px;
+    margin: 10px 10px;
+    background: linear-gradient(to right, $yellow 0%, $yellow 100%);
+    background-size: $minus10 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: lighten($yellow, 20%);
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+input[type="range"].green {
+    -webkit-appearance: none;
+    width: $width;
+    height: 20px;
+    margin: 10px 10px;
+    background: linear-gradient(to right, $green 0%, $green 100%);
+    background-size: $minus10 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: lighten($green, 20%);
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+input[type="range"].blue {
+    -webkit-appearance: none;
+    width: $width;
+    height: 20px;
+    margin: 10px 10px;
+    background: linear-gradient(to right, $blue 0%, $blue 100%);
+    background-size: $minus10 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: lighten($blue, 20%);
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    }
+}

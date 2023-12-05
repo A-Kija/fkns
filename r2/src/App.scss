@@ -1,3 +1,8 @@
+$yellow: #FBAF00;
+$pink: #FFA3AF;
+$blue: #007CBE;
+$green: #00AF54;
+
 .App {
   text-align: center;
 }
@@ -66,5 +71,16 @@
       transform: rotate(7deg);
       display: inline-block;
     }
+  }
+}
+
+.slider {
+  display: flex;
+  h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    width: 50px;
+    color: $green;
   }
 }
