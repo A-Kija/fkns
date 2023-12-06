@@ -6,12 +6,18 @@ export default function Slider() {
     const [rangeValue, setRangeValue] = useState(180);
     const [rotation, setRotation] = useState();
 
-    const { setERotation } = useContext(CircleContext);
+    const { setERotation, reset } = useContext(CircleContext);
 
     useEffect(_ => {
         setRotation(rangeValue - 180);
         setERotation(rangeValue - 180);
     }, [rangeValue, setERotation]);
+
+    useEffect(_ => {
+        if (reset) {
+            setRangeValue(180);
+        }
+    }, [reset]);
 
     return (
         <div className="slider">

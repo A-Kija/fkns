@@ -3,9 +3,9 @@ import { CircleContext } from './CircleContext';
 
 export default function Reset() {
 
-    const { setERotation } = useContext(CircleContext);
+    const { setReset } = useContext(CircleContext);
 
     return (
-        <button className="blue" onClick={_=> setERotation(0)}>Reset</button>
+        <button className="blue" onClick={_=> setReset(true)}>Reset</button>
     )
 }
