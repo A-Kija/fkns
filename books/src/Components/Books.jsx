@@ -10,7 +10,7 @@ export default function Books() {
         <div className="books">
 
             {
-                books.map(book => <Book key={book.id} book={book} />)
+                books.map(book => book.show ? <Book key={book.id} book={book} /> : null)
             }
 
         </div>
