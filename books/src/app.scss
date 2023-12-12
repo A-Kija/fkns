@@ -91,7 +91,7 @@ body {
       align-items: center;
       flex-direction: column;
       width: 200px;
-      height: 400px;
+      height: 440px;
       background-color: skyblue;
       position: relative;
 
@@ -137,6 +137,7 @@ body {
   .top {
     margin-bottom: 40px;
     width: 100%;
+    position: relative;
     h3, h1 {
       text-align: center;
     }
@@ -175,6 +176,61 @@ body {
       color: skyblue;
       height: 50px;
       user-select: none;
+    }
+  }
+  .cart {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    svg {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      fill: white;
+    }
+    .cart-top {
+      position: relative;
+      .cart-count {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: crimson;
+        color: white;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+      }
+    }
+    .cart-list {
+      width: 200px;
+      background-color: lightcoral;
+      padding: 10px;
+      .cart-item {
+        border-bottom: 1px solid white;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .btn--add {
+    background-color: crimson;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

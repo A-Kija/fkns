@@ -20,3 +20,10 @@ export function sortBooks(sortBy) {
         payload: parseInt(sortBy)
     };
 }
+
+export function addToCart(bookId) {
+    return {
+        type: types.ADD_TO_CART,
+        payload: parseInt(bookId)
+    };
+}

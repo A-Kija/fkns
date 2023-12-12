@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { BooksContext } from '../Components/BooksContext';
+import { addToCart } from '../Actions/booksActions';
 
 export default function Book({ book }) {
 
-    const { types } = useContext(BooksContext);
+    const { types, dispachCart } = useContext(BooksContext);
 
     return (
         <div className="book">
@@ -16,6 +17,7 @@ export default function Book({ book }) {
             </div>
             <div className="book__author">{book.author}</div>
             <div className="book__price">{book.price} EUR</div>
+            <button className="btn--add" onClick={_ => dispachCart(addToCart(book.id))}>Į krepšelį</button>
         </div>
     );
 }

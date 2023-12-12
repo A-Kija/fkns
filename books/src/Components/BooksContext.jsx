@@ -1,5 +1,6 @@
 import { createContext, useEffect, useReducer, useRef, useState } from 'react';
 import booksReducer from '../Reducers/booksReducer';
+import cartReducer from '../Reducers/cartReducer';
 import axios from 'axios';
 import { loadFromServer, filterBooks, sortBooks } from '../Actions/booksActions';
 
@@ -11,6 +12,7 @@ const BOOKS_TYPES_URL = 'https://in3.dev/knygos/types/';
 export const BooksProvider = ({ children }) => {
 
     const [books, dispachBooks] = useReducer(booksReducer, null);
+    const [cart, dispachCart] = useReducer(cartReducer, []);
     const [types, setTypes] = useState(null);
     const [filter, setFilter] = useState(0);
     const [sort, setSort] = useState(0);
@@ -57,7 +59,9 @@ export const BooksProvider = ({ children }) => {
             filter, 
             setFilter,
             sort,
-            setSort
+            setSort,
+            cart,
+            dispachCart
         }}>
             {children}
         </BooksContext.Provider>
