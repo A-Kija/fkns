@@ -3,11 +3,13 @@ import booksReducer from '../Reducers/booksReducer';
 import cartReducer from '../Reducers/cartReducer';
 import axios from 'axios';
 import { loadFromServer, filterBooks, sortBooks } from '../Actions/booksActions';
+import { readLsCart } from '../Actions/booksActions';
 
 export const BooksContext = createContext();
 
 const BOOKS_URL = 'https://in3.dev/knygos/';
 const BOOKS_TYPES_URL = 'https://in3.dev/knygos/types/';
+
 
 export const BooksProvider = ({ children }) => {
 
@@ -24,6 +26,10 @@ export const BooksProvider = ({ children }) => {
         axios.get(BOOKS_URL)
             .then(res => dispachBooks(loadFromServer(res.data)))
             .catch(err => console.log(err));
+    }, []);
+
+    useEffect(_ => {
+        dispachCart(readLsCart());
     }, []);
 
     useEffect(_ => {

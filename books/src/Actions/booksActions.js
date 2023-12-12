@@ -27,3 +27,16 @@ export function addToCart(bookId) {
         payload: parseInt(bookId)
     };
 }
+
+export function removeFromCart(bookId) {
+    return {
+        type: types.REMOVE_FROM_CART,
+        payload: parseInt(bookId)
+    };
+}
+
+export function readLsCart() {
+    return {
+        type: types.READ_LS_CART
+    };
+}
