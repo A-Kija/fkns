@@ -1,6 +1,7 @@
 import './buttons.scss';
 import './sliders.scss';
 import './App.scss';
+import axios from 'axios';
 
 import { useState, useReducer, useRef, useEffect } from 'react';
 import counterReducer from './Reducers/counterReducer';
@@ -12,6 +13,12 @@ function App() {
     const [stateCounter, setStateCounter] = useState(0);
     const [reducerCounter, dispachCounter] = useReducer(counterReducer, 0);
     const [howMany, setHowMany] = useState(0);
+
+    useEffect(_ => {
+        axios.get('http://localhost:3001/json')
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
+    }, []);
 
     let A = 0;
 
