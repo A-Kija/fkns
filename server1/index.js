@@ -3,9 +3,9 @@ const app = express();
 const port = 3001;
 
 app.get('/', (req, res) => {
-  res.send('Wats up from server 1!');
+  res.send('Wats up from server 3!');
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Bebras klauso ant ${port} porto!`);
 });
